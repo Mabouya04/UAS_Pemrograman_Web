@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SenjataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/about', function (){
-    return view('about',
-    ['data'=>[
-        ['nama'=>'Muhammad Ilham Nor Ramadhani', 'nim'=> '2010817110008', 'email'=> '2010817110008@mhs.ulm.ac.id'],
-        ['nama'=>'Muhammad Hidayatullah', 'nim'=> '2010817110008', 'email'=> '2010817110008@mhs.ulm.ac.id'],
-        ['nama'=>'Hasan Adli', 'nim'=> '2010817110008', 'email'=> '2010817110008@mhs.ulm.ac.id']]
+    return view('welcome',[
+        'title' => 'Home'
     ]);
 });
+Route::get('/senjatas',[SenjataController::class,'index']);
+
+Route::get('/about', [AboutController::class, 'index']);
+
+//halaman detail
+Route::get('/senjatas/{senjata:id}',[SenjataController::class,'show']);

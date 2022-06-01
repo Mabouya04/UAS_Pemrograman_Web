@@ -1,15 +1,8 @@
 @extends('layouts.main')
 
 @section('container')
-        
-        
-            <table class="table table-striped table-dark ">
-                
-                <tr>
-                    <td colspan="3">
-                        <h3 class="text-white p-2">Website ini dibuat oleh :</h3>
-                    </td>
-                </tr>
+        <h3 class="text-white">Website ini dibuat oleh :</h3>
+            <table class="table tabel-stripped table-dark border">
                 <tr>
                     <th>Nama</th>
                     <th>NIM</th>
@@ -24,6 +17,7 @@
                 @endforeach
             </table>
     
+        <div class="m-3">
             <ul class="list-group" style="width: 40%">
                 <li class="list-group-item bg-dark text-white">Web ini dibangun dengan:</li>
                 <li class="list-group-item">Laravel</li>
@@ -31,5 +25,6 @@
                 <li class="list-group-item">PHP</li>
                 <li class="list-group-item">MySQL</li>
             </ul>
+        </div>
 @endsection
     
