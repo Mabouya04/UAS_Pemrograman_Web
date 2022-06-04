@@ -45,3 +45,11 @@ Route::get('/senjatas/{senjata:id}',[SenjataController::class,'show']);
 Route::get('/login', [LoginController::class,'index']);
 Route::get('/register', [RegisterController::class,'index']);
 Route::post('/register', [RegisterController::class,'store']);
+
+Route::get('/agents', function () {
+    return view ('agents' , [
+        "title" => "Agents",
+        "name" => "Brimstone",
+        "image" => "Brimstone.jpg"
+    ]);
+});
