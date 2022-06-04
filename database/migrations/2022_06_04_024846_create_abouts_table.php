@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('senjatas', function (Blueprint $table) {
+        Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tipe_senjata_id');
-            $table->string('nama_senjata');
-            $table->string('link_gambar');
-            $table->text('deskripsi_senjata');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('senjatas');
+        Schema::dropIfExists('abouts');
     }
 };

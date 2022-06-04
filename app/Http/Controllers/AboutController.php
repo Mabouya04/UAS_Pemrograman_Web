@@ -11,7 +11,7 @@ class AboutController extends Controller
     {
         return view('about', [
             'title' => 'About',
-            'data' => About::getALL()
+            'data' => About::all()
         ]);
     }
 }
