@@ -1,4 +1,4 @@
-@extends('template.head')
+@extends('layouts.main')
 
 @section('container')
         <h3 class="text-white">Website ini dibuat oleh :</h3>
