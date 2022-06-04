@@ -20,7 +20,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($title === "Agents")?'active' : '' }}" href="/agents">Agents</a>
+            <a class="nav-link {{ ($title === "Agent")?'active' : '' }}" href="/agent">Agent</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ ($title === "About")?'active' : '' }}" href="/about">About</a>

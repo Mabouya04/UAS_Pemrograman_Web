@@ -1,12 +1,14 @@
 <?php
 
 use App\Models\TipeSenjata;
+use App\Models\Agent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SenjataController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TipeSenjataController;
+use App\Http\Controllers\AgentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,10 +48,9 @@ Route::get('/login', [LoginController::class,'index']);
 Route::get('/register', [RegisterController::class,'index']);
 Route::post('/register', [RegisterController::class,'store']);
 
-Route::get('/agents', function () {
-    return view ('agents' , [
-        "title" => "Agents",
-        "name" => "Brimstone",
-        "image" => "Brimstone.jpg"
-    ]);
-});
+
+//Halaman Agent
+Route::get('/agent', [AgentController::class, 'index']);
+
+//Halaman Agent Detail
+Route::get('agent/{slug}', [AgentController::class, 'show']);
