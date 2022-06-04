@@ -1,4 +1,4 @@
-@extends('template.head')
+@extends('layouts.main')
 
 @section('container')
 

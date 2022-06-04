@@ -2,8 +2,6 @@
 
 @section('container')
 
-    <a href="" class="btn btn-success mb-2">Tambah Tipe Senjata</a>
-
     <ul class="list-group">
     @foreach ($tipeSenjatas as $tipe)
                 
