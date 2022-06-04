@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\About;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,15 +14,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('senjatas', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('tipe_senjata_id');
-            $table->string('nama_senjata');
-            $table->string('link_gambar');
-            $table->text('deskripsi_senjata');
+        Schema::create('abouts', function (Blueprint $table) {
+            $table -> id();
+            $table -> string('nama');
+            $table -> string('nim');
+            $table -> string('email');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });
+        
     }
 
     /**
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('senjatas');
+        Schema::dropIfExists('abouts');
     }
 };

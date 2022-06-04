@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('template.head')
 
 @section('container')
         <h3 class="text-white">Website ini dibuat oleh :</h3>
@@ -10,9 +10,9 @@
                 </tr>
                 @foreach($data as $d)
                 <tr>
-                    @foreach($d as $key => $value)
-                            <td>{{$value}}</td>    
-                    @endforeach
+                            <td>{{$d->nama}}</td>
+                            <td>{{$d->nim}}</td>
+                            <td>{{$d->email}}</td>    
                 </tr>
                 @endforeach
             </table>
