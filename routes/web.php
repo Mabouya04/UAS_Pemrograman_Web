@@ -26,3 +26,11 @@ Route::get('/about', [AboutController::class, 'index']);
 
 //halaman detail
 Route::get('/senjatas/{senjata:id}',[SenjataController::class,'show']);
+
+Route::get('/agents', function () {
+    return view ('agents' , [
+        "title" => "Agents",
+        "name" => "Brimstone",
+        "image" => "Brimstone.jpg"
+    ]);
+});
