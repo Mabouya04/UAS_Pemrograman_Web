@@ -46,6 +46,8 @@ Route::get('/senjatas/{senjata:id}',[SenjataController::class,'show']);
 //createn senjata
 Route::get('/create-senjata',[SenjataController::class,'create']);
 Route::post('/create-senjata',[SenjataController::class,'store']);
+Route::get('/edit-senjata/{senjata:id}', [SenjataController::class, 'edit']);
+Route::put('/edit-senjata/{senjata:id}',[SenjataController::class,'update']);
 Route::delete('/senjatas/{senjata:id}',[SenjataController::class,'destroy']);
 
 //halaman login

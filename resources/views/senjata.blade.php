@@ -12,7 +12,7 @@
           {!! $senjata->deskripsi_senjata !!}
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
-            <a href="/senjatas" class="btn btn-warning d-grid">Edit</a>
+            <a href="/edit-senjata/{{ $senjata->id }}" class="btn btn-warning d-grid">Edit</a>
             <form action="/senjatas/{{ $senjata->id }}" class="d-inline" method="post">
               @method('delete')
               @csrf

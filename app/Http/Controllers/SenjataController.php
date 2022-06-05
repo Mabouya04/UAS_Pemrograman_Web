@@ -30,6 +30,7 @@ class SenjataController extends Controller
             'tipeSenjatas' => TipeSenjata::all()
         ]);
     }
+    
 
     public function store(Request $request)
     {
@@ -43,6 +44,28 @@ class SenjataController extends Controller
         Senjata::create($validatedData);
 
         return redirect('/senjatas')->with('success', 'Senjata berhasil ditambahkan!');
+    }
+
+    public function edit(Senjata $senjata)
+    {
+        return view('formcrud.editsenjata',[
+                'title' => 'Edit',
+                'senjata' => $senjata,
+                'tipeSenjata' => TipeSenjata::all()
+            ]);  
+    }
+
+    public function update(Senjata $senjata){
+        $validatedData = request()->validate([
+            'nama_senjata' => 'required|max:255',
+            'tipe_senjata_id' => 'required',
+            'link_gambar' => 'required',
+            'deskripsi_senjata' => 'required'
+        ]);
+
+        Senjata::where('id', $senjata->id)->update($validatedData);
+
+        return redirect('/senjatas')->with('success', 'Senjata berhasil diupdate!');
     }
 
     public function destroy(Senjata $senjata)

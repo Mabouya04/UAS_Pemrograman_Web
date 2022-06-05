@@ -28,7 +28,7 @@
           @enderror
         </div>
         
-        <label for="tipe_senjata_id" class="mb-2">Pilih Jenis Senjata: </label><br>
+        <label for="tipe_senjata_id" class="mb-2">Pilih Jenis Senjata </label><br>
         <select name="tipe_senjata_id" id="tipe_senjata_id" class="mb-2" style="width: 300px; height:50px">
             <option value="">Pilih Tipe Senjata</option>
             @foreach ($tipeSenjatas as $tipesenjata)
@@ -39,7 +39,7 @@
 
         <div class="mb-2">
           <label for="floatingInput">Deskripsi Senjata</label>
-          <textarea type="text" name="deskripsi_senjata" class="form-control @error('deskripsi_senjata')is-invalid @enderror" id="deskripsi_senjata" placeholder="Deskripsi senjata" value="{{ old('deskripsi_senjata') }}" rows="5" cols="20"></textarea>
+          <textarea type="text" name="deskripsi_senjata" class="form-control @error('deskripsi_senjata')is-invalid @enderror" id="deskripsi_senjata" placeholder="Deskripsi senjata" rows="5" cols="20">{{ old('deskripsi_senjata') }}</textarea>
           @error('deskripsi_senjata')
           <div class="invalid-feedback">
             {{ $message }}
