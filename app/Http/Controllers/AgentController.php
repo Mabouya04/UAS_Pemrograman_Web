@@ -14,10 +14,10 @@ class AgentController extends Controller
         ]);
     }
 
-    public function show($slug){
+    public function show(Agent $agentdetail){
         return view('agentdetail', [
             "title" => "Detail Agent",
-            "agent" => Agent::find($slug)
+            "agent" => $agentdetail
         ]);
     }
 }

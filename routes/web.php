@@ -61,4 +61,4 @@ Route::post('/register', [RegisterController::class,'store']);
 Route::get('/agent', [AgentController::class, 'index']);
 
 //Halaman Agent Detail
-Route::get('agent/{slug}', [AgentController::class, 'show']);
+Route::get('agent/{agentdetail:slug}', [AgentController::class, 'show']);

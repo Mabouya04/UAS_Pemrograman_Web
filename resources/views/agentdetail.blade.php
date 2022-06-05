@@ -1,11 +1,10 @@
 @extends('layouts.main')
 
 @section('container')
-    <article>
-        <h2>{{ $agent["name"] }}</h2>
-        <h5>{{ $agent["roles"] }}</h5>
-        <p>{{ $agent["body"] }}</p>
-    </article>
+    <h2>{{ $agent->nama_agent }}</h2>
+    <h5>{{ $agent->roles }}</h5>
+        
+    {!! $agent->body !!}
 
     <a href="/agent">Back to Agent</a>
 @endsection
