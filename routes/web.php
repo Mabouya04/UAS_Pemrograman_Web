@@ -46,11 +46,13 @@ Route::get('/senjatas/{senjata:id}',[SenjataController::class,'show']);
 //createn senjata
 Route::get('/create-senjata',[SenjataController::class,'create']);
 Route::post('/create-senjata',[SenjataController::class,'store']);
+Route::delete('/senjatas/{senjata:id}',[SenjataController::class,'destroy']);
 
 //halaman login
 Route::get('/login', [LoginController::class,'index']);
 Route::get('/register', [RegisterController::class,'index']);
 Route::post('/register', [RegisterController::class,'store']);
+
 
 
 //Halaman Agent

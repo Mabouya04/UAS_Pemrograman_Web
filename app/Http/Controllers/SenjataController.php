@@ -44,4 +44,12 @@ class SenjataController extends Controller
 
         return redirect('/senjatas')->with('success', 'Senjata berhasil ditambahkan!');
     }
+
+    public function destroy(Senjata $senjata)
+    {
+        $senjata = Senjata::find($senjata->id);
+        $senjata->delete();
+
+        return redirect('/senjatas')->with('success', 'Senjata berhasil dihapus!');
+    }
 }

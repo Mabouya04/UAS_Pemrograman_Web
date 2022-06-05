@@ -13,7 +13,11 @@
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
             <a href="/senjatas" class="btn btn-warning d-grid">Edit</a>
-            <a href="/delete" class="btn btn-danger d-grid">Delete</a>
+            <form action="/senjatas/{{ $senjata->id }}" class="d-inline" method="post">
+              @method('delete')
+              @csrf
+              <button class="btn btn-danger text-light" onclick="return confirm('Hapus senjata ?')">Delete</button>
+            </form>
             </div>
         </div>
     </div>
