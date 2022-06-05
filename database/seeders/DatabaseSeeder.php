@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         TipeSenjata::create([
-            'name' => 'Sub-Machine Gune',
+            'name' => 'Sub-Machine Gun',
             'slug' => 'sub-machine-gun'
         ]);
 

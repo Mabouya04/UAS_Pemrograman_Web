@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('senjatas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tipe_senjata_id');
-            $table->string('nama_senjata');
+            $table->string('nama_senjata')->unique();
             $table->string('link_gambar');
             $table->text('deskripsi_senjata');
             $table->dateTime('created_at');

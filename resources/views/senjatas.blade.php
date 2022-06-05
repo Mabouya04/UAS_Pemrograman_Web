@@ -2,8 +2,8 @@
 
 @section('container')
 
-    <a href="" class="btn btn-success mb-2">Tambah Senjata</a>
-
+    <a href="/create-senjata" class="btn btn-success mb-2">Tambah Senjata</a>
+    @csrf
     @foreach ($senjatas as $senjata)
     <div class="card mb-3" style="max-width: 700px;">
     <div class="row g-0">

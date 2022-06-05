@@ -43,6 +43,10 @@ Route::get('/tipes/{tipe:slug}', function (TipeSenjata $tipe) {
 //halaman detail
 Route::get('/senjatas/{senjata:id}',[SenjataController::class,'show']);
 
+//createn senjata
+Route::get('/create-senjata',[SenjataController::class,'create']);
+Route::post('/create-senjata',[SenjataController::class,'store']);
+
 //halaman login
 Route::get('/login', [LoginController::class,'index']);
 Route::get('/register', [RegisterController::class,'index']);
