@@ -7,6 +7,8 @@ use App\Models\TipeSenjata;
 use App\Models\Senjata;
 use App\Models\User;
 use App\Models\Map;
+use App\Models\Agent;
+use App\Models\Role;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -61,6 +63,26 @@ class DatabaseSeeder extends Seeder
         TipeSenjata::create([
             'name' => 'Melee',
             'slug' => 'melee'
+        ]);
+
+        Role::create([
+            'name' => 'Controller',
+            'slug' => 'controller'
+        ]);
+
+        Role::create([
+            'name' => 'Duelist',
+            'slug' => 'duelist'
+        ]);
+
+        Role::create([
+            'name' => 'Initiator',
+            'slug' => 'initiator'
+        ]);
+
+        Role::create([
+            'name' => 'Sentinel',
+            'slug' => 'sentinel'
         ]);
 
         Senjata::create([
@@ -141,6 +163,41 @@ class DatabaseSeeder extends Seeder
             'link_layout' => 'https://cdn.esportsdriven.com/media/upload/images/db73bd9e504575ee2e703c1142b68a14_1.large.jpg',
             'link_gambar_map' => 'https://firstsportz.com/wp-content/uploads/2021/06/IMG-20210609-WA0274_copy_1600x900-1024x576.jpg',
             'deskripsi_map' => 'Icebox is the first map to introduce horizontal ziplines, seen at the A Site. Each Icebox site is a complex combat space that features plenty of cover and verticality. This map emphasizes skirmishes, sharp aim, and adaptive play.'
+        ]);
+
+        Agent::create([
+            'nama_agent' => 'Brimstone',
+            'role_id' => 1,
+            'link_agent' => 'https://vgraphs.com/images/agents/brimstone-avatar.jpg',
+            'body' => 'Hailing from the United States, Liam Byrne started his adult life as a firefighter for the BFD and then a military soldier for a Special Forces squad known as the Ragged Ravens. He served in both professions alongside a close friend who he had known since childhood. He also became affiliated with Kingdom Corporation, eventually becoming a veteran of their subsidiary K/SEC.'
+        ]);
+
+        Agent::create([
+            'nama_agent' => 'Viper',
+            'role_id' => 1,
+            'link_agent' => 'https://vgraphs.com/images/agents/viper-avatar.jpg',
+            'body' => 'Since the rise of Venice and the numerous battles the disaster triggered, Viper has been seen leading multiple missions across the globe, including one to Rabat to prevent a spike detonation and another to New Mexico to do a preliminary sweep of a destroyed research facility. Another mission had her accompanying Brimstone when they encountered French weapons designer Vincent Fabron.'
+        ]);
+
+        Agent::create([
+            'nama_agent' => 'Omen',
+            'role_id' => 1,
+            'link_agent' => 'https://vgraphs.com/images/agents/omen-avatar.jpg',
+            'body' => 'Omen is a phantom of a man with mysterious origins and many names. He has a limited memory of his past, though he does remember being involved in something that caused him to be ripped apart and killed. All he knows that links to who he used to be is a place known as Point Light, a past friendship with Sabine "Viper" Callas, and feelings of restoration with every kill he makes.'
+        ]);
+
+        Agent::create([
+            'nama_agent' => 'Killjoy',
+            'role_id' => 4,
+            'link_agent' => 'https://vgraphs.com/images/agents/killjoy-avatar.jpg',
+            'body' => 'Böhringer was the fourth agent to join the VALORANT Protocol as "Killjoy". She earned her call sign after her team initially used it to compliment her outstanding skills that reduced the amount of work the rest of them had to do, with Klara deciding to keep the nickname. Killjoy now continues her innovative work as an agent of VALORANT and the protégé of the organizations commander, Brimstone. From inventing spike defusers under pressure of an incoming detonation to building teleporters for transportation between worlds, any device the Protocol needs for any purpose - with the right tools, Killjoy can make it.'
+        ]);
+
+        Agent::create([
+            'nama_agent' => 'Cypher',
+            'role_id' => 4,
+            'link_agent' => 'https://vgraphs.com/images/agents/cypher-avatar.jpg',
+            'body' => 'Cypher is constantly gathering secrets, information, and intel, to the point of managing to retrieve the passwords of everyone in the VALORANT Protocol. He keeps most of this information to himself, making sure that no one ever discovers them and only revealing anything he knows for a price. In contrast of how he knows a lot about his allies, they do not know much about him, and he prefers to keep it that way.'
         ]);
 
         About::create([

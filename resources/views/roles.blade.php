@@ -1,12 +1,11 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="mb-5">Halaman Roles</h1>
-    @foreach ($roles as $role)
-        <ul>
-            <li>
-                <h2><a href="/roles/{{ $role->slug }}">{{ $role->name }}</a></h2>
-            </li>
-        </ul>
-    @endforeach
+    <ul class="list-group">
+        @foreach ($roles as $role)
+                    
+            <li class="list-group-item"><h2><a href="/roles/{{ $role->slug }}" class="link-primary text-decoration-none">{{ $role->name }}</a></h2></li>
+                    
+        @endforeach
+    </ul>
 @endsection

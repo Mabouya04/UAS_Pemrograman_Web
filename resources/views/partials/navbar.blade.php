@@ -19,8 +19,14 @@
               <li><a class="dropdown-item" href="/tipes">Tipe Senjata</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {{ ($title === "Agent")?'active' : '' }}" href="/agent">Agent</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Agent
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/agent">Agent</a></li>
+              <li><a class="dropdown-item" href="/roles">Roles</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ ($title === "Map")?'active' : '' }}" href="/map">Map</a>

@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::create('agents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('role_id');
-            $table->string('nama_agent');
-            $table->string('slug')->unique();
-            $table->text('excerpt');
+            $table->string('nama_agent')->unique();
+            $table->string('link_agent');
             $table->text('body');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

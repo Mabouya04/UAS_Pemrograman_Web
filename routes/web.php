@@ -12,6 +12,7 @@ use App\Http\Controllers\TipeSenjataController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\RoleController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -61,19 +62,10 @@ Route::post('/register', [RegisterController::class,'store']);
 Route::get('/agent', [AgentController::class, 'index']);
 
 //Halaman Agent Detail
-Route::get('/agent/{agentdetail:slug}', [AgentController::class, 'show']);
+Route::get('/agent/{agentdetail:id}', [AgentController::class, 'show']);
 
-Route::get('/roles', function() {
-    return view('roles', [
-        'title' => 'Halaman Roles',
-        'roles' => Role::all()
-    ]);
-});
+//Halaman Role
+Route::get('/roles', [RoleController::class, 'index']);
 
-Route::get('/roles/{role:slug}', function(Role $role) {
-    return view('role', [
-        'title' => $role->name,
-        'agents' => $role->agent,
-        'role' => $role->name
-    ]);
-});
+//Halaman Role Detail
+Route::get('/roles/{role:slug}', [RoleController::class, 'show']);
