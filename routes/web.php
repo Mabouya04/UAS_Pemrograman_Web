@@ -2,6 +2,7 @@
 
 use App\Models\TipeSenjata;
 use App\Models\Agent;
+use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LoginController;
@@ -9,13 +10,9 @@ use App\Http\Controllers\SenjataController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TipeSenjataController;
 use App\Http\Controllers\AgentController;
-<<<<<<< HEAD
-use App\Models\Role;
-=======
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MapController;
 use GuzzleHttp\Middleware;
->>>>>>> 7b9ec019a80751bec13bfa9bbc65723282a74c8b
 
 /*
 |--------------------------------------------------------------------------
