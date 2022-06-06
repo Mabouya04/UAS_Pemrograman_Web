@@ -10,6 +10,14 @@
         <p>About Agent :</p>
       {!! $agent->body !!}
       </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+        <a href="/edit-agent/{{ $agent->id }}" class="btn btn-warning d-grid">Edit</a>
+        <form action="/agent/{{ $agent->id }}" class="d-inline" method="post">
+          @method('delete')
+          @csrf
+          <button class="btn btn-danger text-light" onclick="return confirm('Hapus Agent ?')">Delete</button>
+        </form>
+      </div>
     </div>
 </div>
 

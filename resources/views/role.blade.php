@@ -2,6 +2,7 @@
 
 @section('container')
     <h1>AGENT'S ROLES : {{ $role }}</h1>
+    <a href="/create-agent" class="btn btn-success mb-2">Tambah Agent</a>
 
     @foreach ($agents as $agent)
     <div class="card mb-3" style="max-width: 700px;">

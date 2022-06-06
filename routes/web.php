@@ -69,3 +69,10 @@ Route::get('/roles', [RoleController::class, 'index']);
 
 //Halaman Role Detail
 Route::get('/roles/{role:slug}', [RoleController::class, 'show']);
+
+//Halaman CRUD Agent
+Route::get('/create-agent',[AgentController::class,'create'])->middleware('auth');
+Route::post('/create-agent',[AgentController::class,'store']);
+Route::get('/edit-agent/{agent:id}', [AgentController::class, 'edit'])->middleware('auth');
+Route::put('/edit-agent/{agent:id}',[AgentController::class,'update']);
+Route::delete('/agent/{agent:id}',[AgentController::class,'destroy'])->middleware('auth');

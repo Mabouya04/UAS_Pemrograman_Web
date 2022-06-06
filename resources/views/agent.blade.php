@@ -2,6 +2,29 @@
 
 @section('container')
 
+    <a href="/create-agent" class="btn btn-success mb-2">Tambah Agent</a>
+    @csrf
+    <div class="col-lg-7">
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (session()->has('update'))
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ session('update') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (session()->has('delete'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('delete') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    </div>
+
     @foreach ($agents as $agent)
     <div class="card mb-3" style="max-width: 700px;">
         <div class="row g-0">
