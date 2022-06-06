@@ -18,6 +18,7 @@ return new class extends Migration
             $table -> string('nama_map');
             $table -> string('link_gambar_map');
             $table -> string('link_layout');
+            $table -> foreignId('agent_id')->nullable();
             $table -> text('deskripsi_map');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');

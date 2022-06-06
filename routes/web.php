@@ -33,6 +33,12 @@ Route::get('/about', [AboutController::class, 'index']);
 //halaman map
 Route::get('/map/{map:id}',[MapController::class, 'show']);
 Route::get('/map', [MapController::class, 'index']);
+//crud map
+Route::get('/create-map', [MapController::class, 'create'])->middleware('auth');
+Route::post('/create-map', [MapController::class, 'store']);
+ROute::get('/edit-map/{map:id}', [MapController::class, 'edit'])->middleware('auth');
+Route::put('/edit-map/{map:id}', [MapController::class, 'update']);
+Route::delete('/map/{map:id}', [MapController::class, 'destroy'])->middleware('auth');
 
 //halaman senjata menurut tipe
 Route::get('/tipes', [TipeSenjataController::class, 'index']);

@@ -14,4 +14,8 @@ class Agent extends Model
     public function role(){
         return $this->belongsTo(Role::class);
     }
+
+    public function map(){
+        return $this->hasMany(Map::class);
+    }
 }

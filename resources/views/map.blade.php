@@ -5,11 +5,13 @@
     <div class="card mb-3 mt-3" style="width: 50rem;">
         <img src="{{ $data->link_gambar_map }}" class="card-img-top img-fluid" alt="{{ $data->nama_map }}">
         <div class="card-body">
-          <h4 class="card-title p-2">Nama Map : {{ $data->nama_map }}</h4>
-          <h4 class="card-title p-2">Map Layout : </h4>
-          <img src="{{ $data->link_layout }}" class="card-img img-fluid" alt="{{ $data->nama_map }}">
+          <h3 class="card-title p-2">{{ $data->nama_map }}</h3>
+          <h5 class="card-text p-2">Map Layout : </h5>
+          <img src="{{ $data->link_layout }}" class="card-img img-fluid" alt="{{ $data->nama_map }}" style="width: 20rem;">
           <div class="card-text container p-2">
-            <p>Deskripsi Map :</p>
+          <h5 class="card-text p-2">Related Agent : <a href="/agent/{{ $data->agent->id }}" class="text-decoration-none">{{ $data->agent->nama_agent }}</a>
+          </h5>
+            <h5>Deskripsi Map :</h5>
           {!! $data->deskripsi_map !!}
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
