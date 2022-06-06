@@ -65,7 +65,7 @@ class SenjataController extends Controller
 
         Senjata::where('id', $senjata->id)->update($validatedData);
 
-        return redirect('/senjatas')->with('success', 'Senjata berhasil diupdate!');
+        return redirect('/senjatas')->with('update', 'Senjata berhasil diupdate!');
     }
 
     public function destroy(Senjata $senjata)
@@ -73,6 +73,6 @@ class SenjataController extends Controller
         $senjata = Senjata::find($senjata->id);
         $senjata->delete();
 
-        return redirect('/senjatas')->with('success', 'Senjata berhasil dihapus!');
+        return redirect('/senjatas')->with('delete', 'Senjata berhasil dihapus!');
     }
 }

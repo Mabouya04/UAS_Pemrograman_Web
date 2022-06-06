@@ -23,16 +23,38 @@
             <a class="nav-link {{ ($title === "Agent")?'active' : '' }}" href="/agent">Agent</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link {{ ($title === "Map")?'active' : '' }}" href="/map">Map</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link {{ ($title === "About")?'active' : '' }}" href="/about">About</a>
           </li>
         </ul>
+
+        @auth
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <form action="/logout" method="post">
+              @csrf
+              <button class="nav-link bt"><i class="bi bi-box-arrow-right"></i> Logout</button>
+            </form>
+          </li>
+        </ul>  
+        @else
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a href="/login" class="nav-link {{ ($title === "Login")?'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
           </li>
+        </ul>  
+        @endauth
 
-        </ul>
+        
       </div>
     </div>
   </nav>
 
+  <style>
+    .bt {
+      border:none;
+      background-color: transparent;
+    }
+  </style>
