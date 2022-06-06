@@ -3,7 +3,7 @@
 @section('container')
 
 <h1>Tipe Senajata : {{ $tipe }}</h1>
-    <a href="" class="btn btn-success mb-2">Tambah Senjata</a>
+<a href="/create-senjata" class="btn btn-success mb-2">Tambah Senjata</a>
 
     @foreach ($tipes as $tipe_senjata)
     <div class="card mb-3" style="max-width: 700px;">

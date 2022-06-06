@@ -13,4 +13,12 @@ class TipeSenjataController extends Controller
             'tipeSenjatas' => TipeSenjata::all()
         ]);
     }
+
+    public function show(TipeSenjata $tipe){
+        return view('tipe', [
+            'title' => $tipe->name,
+            'tipes' => $tipe->Senjata,
+            'tipe' => $tipe->name
+        ]);
+    }
 }

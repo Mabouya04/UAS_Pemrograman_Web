@@ -107,7 +107,7 @@ class DatabaseSeeder extends Seeder
             'email' => '2010817110008@mhs.ulm.ac.id',
             'username' => 'ilham123',
             'id_senjata'=> 1,
-            'password' => bcrypt('12345')
+            'password' => bcrypt('123456')
         ]);
 
         User::create([
@@ -115,7 +115,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'ilhamgod@gmail.com',
             'username' => 'ilhamgod123',
             'id_senjata'=> 3,
-            'password' => bcrypt('12345')
+            'password' => bcrypt('123456')
         ]);
 
         About::create([

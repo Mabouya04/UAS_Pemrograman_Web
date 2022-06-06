@@ -9,6 +9,8 @@ use App\Http\Controllers\SenjataController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TipeSenjataController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\HomeController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,38 +23,30 @@ use App\Http\Controllers\AgentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome',[
-        'title' => 'Home'
-    ]);
-});
-Route::get('/senjatas',[SenjataController::class,'index']);
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about', [AboutController::class, 'index']);
 
+//halaman senjata menurut tipe
 Route::get('/tipes', [TipeSenjataController::class, 'index']);
+Route::get('/tipes/{tipe:slug}', [TipeSenjataController::class, 'show']);
 
-Route::get('/tipes/{tipe:slug}', function (TipeSenjata $tipe) {
-    return view('tipe', [
-        'title' => $tipe->name,
-        'tipes' => $tipe->Senjata,
-        'tipe' => $tipe->name
-    ]);
-});
-
-//halaman detail
+//halaman senjata
 Route::get('/senjatas/{senjata:id}',[SenjataController::class,'show']);
+Route::get('/senjatas',[SenjataController::class,'index']);
 
-//createn senjata
-Route::get('/create-senjata',[SenjataController::class,'create']);
+//crud senjata
+Route::get('/create-senjata',[SenjataController::class,'create'])->middleware('auth');
 Route::post('/create-senjata',[SenjataController::class,'store']);
-Route::get('/edit-senjata/{senjata:id}', [SenjataController::class, 'edit']);
+Route::get('/edit-senjata/{senjata:id}', [SenjataController::class, 'edit'])->middleware('auth');
 Route::put('/edit-senjata/{senjata:id}',[SenjataController::class,'update']);
-Route::delete('/senjatas/{senjata:id}',[SenjataController::class,'destroy']);
+Route::delete('/senjatas/{senjata:id}',[SenjataController::class,'destroy'])->middleware('auth');
 
 //halaman login
-Route::get('/login', [LoginController::class,'index']);
-Route::get('/register', [RegisterController::class,'index']);
+Route::get('/login', [LoginController::class,'index'])->name('login') -> middleware('guest');
+Route::post('/login', [LoginController::class,'authenticate']);
+Route::post('/logout', [LoginController::class,'logout'])-> middleware('auth');
+Route::get('/register', [RegisterController::class,'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class,'store']);
 
 
