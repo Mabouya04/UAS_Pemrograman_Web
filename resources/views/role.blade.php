@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="mb-5">Halaman Agent</h1>
+    <h1 class="mb-5">Agent Role : {{ $role }}</h1>
     @foreach ($agents as $agent)
         <article class="mb-5">
             <h2>

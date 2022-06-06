@@ -9,6 +9,7 @@ use App\Http\Controllers\SenjataController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TipeSenjataController;
 use App\Http\Controllers\AgentController;
+use App\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,4 +62,19 @@ Route::post('/register', [RegisterController::class,'store']);
 Route::get('/agent', [AgentController::class, 'index']);
 
 //Halaman Agent Detail
-Route::get('agent/{agentdetail:slug}', [AgentController::class, 'show']);
+Route::get('/agent/{agentdetail:slug}', [AgentController::class, 'show']);
+
+Route::get('/roles', function() {
+    return view('roles', [
+        'title' => 'Halaman Roles',
+        'roles' => Role::all()
+    ]);
+});
+
+Route::get('/roles/{role:slug}', function(Role $role) {
+    return view('role', [
+        'title' => $role->name,
+        'agents' => $role->agent,
+        'role' => $role->name
+    ]);
+});

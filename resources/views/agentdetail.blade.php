@@ -2,7 +2,8 @@
 
 @section('container')
     <h2>{{ $agent->nama_agent }}</h2>
-    <h5>{{ $agent->roles }}</h5>
+    
+    <p>Type : <a href="/roles/{{ $agent->role->slug }}">{{ $agent->role->name }}</a></p>
         
     {!! $agent->body !!}
 
