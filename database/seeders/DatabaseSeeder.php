@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\TipeSenjata;
 use App\Models\Senjata;
 use App\Models\User;
+use App\Models\Map;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -116,6 +117,30 @@ class DatabaseSeeder extends Seeder
             'username' => 'ilhamgod123',
             'id_senjata'=> 3,
             'password' => bcrypt('123456')
+        ]);
+
+        Map::create([
+
+            'nama_map' => 'Fracture',
+            'link_layout' => 'https://cdn.esportsdriven.com/media/upload/images/FRACTURE_CALLOUTS.large.jpg',
+            'link_gambar_map' => 'https://assets.skor.id/crop/0x0:0x0/x/photo/2021/09/06/2045678105.jpeg',
+            'deskripsi_map' => 'A top secret research facility split apart by a failed radianite experiment. With defender options as divided as the map, the choice is yours: meet the attackers on their own turf or batten down the hatches to weather the assault.'
+        ]);
+
+        Map::create([
+
+            'nama_map' => 'Ghost',
+            'link_layout' => 1,
+            'link_gambar_map' => 'https://assets.skor.id/crop/0x0:0x0/x/photo/2021/09/06/2045678105.jpeg',
+            'deskripsi_map' => 'The Ghost is a fairly cheap semi-automatic sidearm with good damage and low capacity. It usually is a 2 tap to the head and 5-6 shots to the body. The Ghost comes equipped with a silencer which helps to increase its overall accuracy and reduces the hearing range and silences the sound, making it useful for lurking.'
+        ]);
+
+        Map::create([
+
+            'nama_map' => 'Ghost',
+            'link_layout' => 1,
+            'link_gambar_map' => 'https://vgraphs.com/images/weapons/valorant-ghost-profile-icon.png',
+            'deskripsi_map' => 'The Ghost is a fairly cheap semi-automatic sidearm with good damage and low capacity. It usually is a 2 tap to the head and 5-6 shots to the body. The Ghost comes equipped with a silencer which helps to increase its overall accuracy and reduces the hearing range and silences the sound, making it useful for lurking.'
         ]);
 
         About::create([

@@ -10,6 +10,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TipeSenjataController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MapController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -26,6 +27,10 @@ use GuzzleHttp\Middleware;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about', [AboutController::class, 'index']);
+
+//halaman map
+Route::get('/map/{map:id}',[MapController::class, 'show']);
+Route::get('/map', [MapController::class, 'index']);
 
 //halaman senjata menurut tipe
 Route::get('/tipes', [TipeSenjataController::class, 'index']);
