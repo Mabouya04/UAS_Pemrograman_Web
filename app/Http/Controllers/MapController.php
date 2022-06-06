@@ -43,7 +43,7 @@ class MapController extends Controller
 
         Map::create($validatedData);
 
-        return redirect('/map')->with('success', 'Senjata berhasil ditambahkan!');
+        return redirect('/map')->with('success', 'Map berhasil ditambahkan!');
     }
 
     public function edit(Map $map)
@@ -66,7 +66,7 @@ class MapController extends Controller
 
         Map::where('id', $map->id)->update($validatedData);
 
-        return redirect('/map')->with('update', 'Senjata berhasil diupdate!');
+        return redirect('/map')->with('update', 'Map berhasil diupdate!');
     }
 
     public function destroy(Map $map)
@@ -74,7 +74,7 @@ class MapController extends Controller
         $map = Map::find($map->id);
         $map->delete();
 
-        return redirect('/map')->with('delete', 'Senjata berhasil dihapus!');
+        return redirect('/map')->with('delete', 'Map berhasil dihapus!');
     }
 
     
